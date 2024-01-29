@@ -1,0 +1,143 @@
+% !TEX program = pdflatex
+\documentclass[table,sigconf,review]{acmart}
+
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+% \usepackage{biblatex} %Imports biblatex package
+% \addbibresource{bibliography.bib} %Import the bibliography file
+\usepackage{amsmath,amsfonts}
+\usepackage{array}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+% \usepackage[many]{tcolorbox}
+\usepackage[most]{tcolorbox}
+\usepackage{balance}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tipa}
+\usepackage{svg}
+\usepackage{color, colortbl}
+\usepackage{soul}
+% \usepackage{ulem}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{marginnote}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{cancel}
+\captionsetup[figure]{labelfont=bf, name=Figure, labelsep=period}
+\captionsetup[table]{labelfont=bf, name=Table, labelsep=period}
+\renewcommand{\thetable}{\arabic{table}}
+
+\acmConference[ICSE 2024]{46th International Conference on Software Engineering}{April 2024}{Lisbon, Portugal}
+
+\pagestyle{fancy}
+
+% %% \BibTeX command to typeset BibTeX logo in the docs
+% \AtBeginDocument{%
+%   \providecommand\BibTeX{{%
+%     \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+
+
+\begin{document}
+
+\newcommand\ans[1]{
+\noindent
+\fcolorbox{green!40!black}{green!5}{\noindent
+ \parbox{0.98\columnwidth}{\noindent  #1}}\\
+}
+
+
+\title{SAMPLE TITLE}
+
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+   xleftmargin=2em,
+   xrightmargin=0em,
+}
+
+\lstdefinestyle{mystyle}{
+  language=Python,
+  backgroundcolor=\color{backcolour},
+  basicstyle=\small\ttfamily,
+  numbers=left,
+  numberstyle=\tiny\color{codegray},
+  stepnumber=1,
+  numbersep=10pt,
+  tabsize=4,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  frame=single,
+  rulecolor=\color{black},
+  aboveskip=0pt,
+  belowskip=0pt,
+  captionpos=b,
+  stringstyle=\color{codepurple},
+  keywordstyle=\color{blue},
+  commentstyle=\color{codegreen},
+  escapeinside={\%*}{*)},
+  morekeywords={*,...}.
+}
+
+\lstset{style=mystyle}
+
+\newboolean{showcomments}
+\setboolean{showcomments}{true}
+\ifthenelse{\boolean{showcomments}}
+{ \newcommand{\mynote}[2]{\textcolor{orange}{
+			\fbox{\bfseries\sffamily\scriptsize#1}
+			{\small$\blacktriangleright$\textsf{\emph{#2}}$\blacktriangleleft$}}}}
+% { \newcommand{\mynote}[2]{}}
+
+\ifthenelse{\boolean{showcomments}}
+{ \newcommand{\dnote}[2]{\textcolor{red}{
+			\fbox{\bfseries\sffamily\scriptsize#1}
+			{\small$\blacktriangleright$\textsf{\emph{#2}}$\blacktriangleleft$}}}}
+% { \newcommand{\dnote}[2]{}}
+
+\ifthenelse{\boolean{showcomments}}
+{ \newcommand{\hnote}[2]{\textcolor{blue}{
+			\fbox{\bfseries\sffamily\scriptsize#1}
+			{\small$\blacktriangleright$\textsf{\emph{#2}}$\blacktriangleleft$}}}}
+% { \newcommand{\hnote}[2]{}}
+
+\newcommand{\yz}[1]{\dnote{Zhou}{#1}}
+
+
+\author{Anonymous authors}
+
+
+\input{sections/00abstract.tex}
+\maketitle
+\input{sections/01introduction}
+\input{sections/02background}
+\input{sections/03methodology}
+\input{sections/04results}
+\input{sections/05discussion}
+\input{sections/06relatedwork}
+\input{sections/07conclusion}
+
+
+\balance
+% \printbibliography %Prints bibliography
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{reference}
+
+\vspace{12pt}
+
+\end{document}
